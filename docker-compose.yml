@@ -12,7 +12,7 @@ volumes:
 
 services:
   owncloud:
-    image: owncloud/server:${OWNCLOUD_VERSION}
+    image: owncloud/server:latest
     restart: always
     ports:
       - ${HTTP_PORT}:8080
@@ -20,7 +20,7 @@ services:
       - db
       - redis
     environment:
-      - OWNCLOUD_DOMAIN=${OWNCLOUD_DOMAIN}
+      - OWNCLOUD_DOMAIN=localhost
       - OWNCLOUD_DB_TYPE=mysql
       - OWNCLOUD_DB_NAME=owncloud
       - OWNCLOUD_DB_USERNAME=owncloud
